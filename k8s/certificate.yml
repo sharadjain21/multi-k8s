@@ -1,4 +1,4 @@
-apiVersion: cert_manager.io/v1
+apiVersion: cert-manager.io/v1
 Kind: Certificate
 metadata:
   name: omtechnologies-ml-tls
