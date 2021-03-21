@@ -14,7 +14,7 @@ before_install:
   - gcloud config set project sigma-smile-286608
   - gcloud config set compute/zone us-central1-c
   - gcloud container clusters get-credentials multi-cluster
-  - echo "$DOCKER_PASSWORD" | docker login -v "DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_USERNAME" --password-stdin
   - docker build -t om21/react-test -f ./client/Dockerfile.dev ./client
 
 script:
