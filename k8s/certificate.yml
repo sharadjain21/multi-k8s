@@ -1,0 +1,20 @@
+apiVersion: cert_manager.io/v1
+Kind: Certificate
+metadata:
+  name: omtechnologies-ml-tls
+spec:
+  secretName: omtechnologies-ml
+  issuerRef: 
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: omtechnologies.ml
+  dnsNames:
+    - omtechnologies.ml
+    - www.omtechnologies.ml
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - omtechnologies.ml
+          - www.omtechnologies.ml
